@@ -14,7 +14,7 @@ jobs:
 
       - name: Replace UUID
         run: |
-          sed -i 's/89b3cbba-e6ac-485a-9481-976a0415eab9/259d4a39-b5cc-40b1-bc5a-117a06e016d4/g' /_worker.js
+          sed -i 's/89b3cbba-e6ac-485a-9481-976a0415eab9/259d4a39-b5cc-40b1-bc5a-117a06e016d4/g' _worker.js
 
       - name: Commit changes
         run: |
