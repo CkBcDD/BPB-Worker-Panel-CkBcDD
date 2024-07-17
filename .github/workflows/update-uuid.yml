@@ -1,0 +1,25 @@
+name: Update UUID
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-uuid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Replace UUID
+        run: |
+          sed -i 's/89b3cbba-e6ac-485a-9481-976a0415eab9/259d4a39-b5cc-40b1-bc5a-117a06e016d4/g' /_worker.js
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add path/to/_worker.js
+          git commit -m 'Update UUID'
+          git push
